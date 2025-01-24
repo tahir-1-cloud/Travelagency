@@ -1,0 +1,99 @@
+* {
+    font-family: Open Sans;
+  }
+  body {
+    background-image: url(http://getwallpapers.com/wallpaper/full/c/e/e/1523513-airplane-wallpapers-1920x1080-4k.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #03f0fc;   
+}
+
+.banner{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.logoTop{
+    margin: auto 3rem;
+    cursor: pointer;
+}
+
+
+.nav-links{
+    margin: auto 0;
+}
+
+header nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin: auto 1.2rem;
+    position: relative;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+
+ul li a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    background-color: #fff;
+    transition: 0.6s ease-out;
+    
+}
+
+ul li a:hover::after{
+    width: 100%;
+}
+.main{
+    background-color: rgba(0,100,0,0.3);
+    display: inline-block;
+    margin: 120px 100px 100px 70px;
+    width:270px;
+    padding: 4px 10px 10px 25px;
+    border-radius: 12px;
+    border:2px solid rgba(255,255, 255, 0.3);
+}
+.logo {
+        position: absolute;
+        top: 450px; 
+        right: 50px; 
+        width: 300px;
+        height: 300px;
+    }
+h2{
+    margin:8px 4px 20px 52px;
+    color:green;
+}
+h3{
+    margin:8px 4px 20px 52px;
+    color:white;
+}
+
+.register{
+    font-size: 18px;
+    font-style: italic;
+
+}
+.name{
+    width:200px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 4px;
+    outline: 0;
+    background-color: #fff;
+    box-shadow: inset 1px 1px 5px rgba(100,0,0,0.8);
+}

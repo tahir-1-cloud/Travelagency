@@ -1,0 +1,30 @@
+span.edit-btn, span.remove-btn,span.save-btn {
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 5px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+span.remove-btn {
+    background-color: #e74c3c;
+}
+
+span.edit-btn:hover, span.remove-btn:hover {
+    background-color: #2980b9;
+}
+.edit-input {
+    width: 50px; 
+    padding: 6px;
+    box-sizing: border-box;
+}
+span.save-btn {
+    background-color: #2ecc71; 
+    color: #fff;
+}
+
+span.save-btn:hover {
+    background-color: #27ae60; 
+}

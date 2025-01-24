@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Travlweb.Models.BookingViewModel>
+
+@{
+    ViewData["Title"] = "BookingList";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+<!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+<h2>Bookings</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<table id="bookingsTable" class="display table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Sr.No</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>People</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Gender</th>
+            <th>Action</th> <!-- Ensure this column exists in both thead and tbody -->
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            int SrNo = 1;
+            foreach (var booking in Model)
+            {
+                <tr>
+                    <td>@SrNo</td>
+                    <td>@booking.FirstName</td>
+                    <td>@booking.LastName</td>
+                    <td>@booking.Email</td>
+                    <td>@booking.PhoneNumber</td>
+                    <td>@booking.NumberOfPersons</td>
+                    <td>@booking.LeavingFrom</td>
+                    <td>@booking.TravelingTo</td>
+                    <td>@booking.Gender</td>
+                    <td>
+                        <div class="d-flex flex-column">
+                            <button type="button" class="btn btn-success"
+                                    onclick="window.location.href='@Url.Action("UpdateBooking", "Booking", new { id = @booking.BookingId })'">
+                                Edit
+                            </button>
+                            <button type="button" class="btn btn-danger"
+                                    onclick="window.location.href='@Url.Action("DeleteBooking", "Booking", new { id = @booking.BookingId })'">
+                                Delete
+                            </button>
+
+                           @*  <button type="button" class="btn btn-info"
+                                    onclick="window.location.href='@Url.Action("BookingDetails", "Booking", new { id = @booking.BookingId })'">
+                                View
+                            </button> *@
+                        </div>
+                    </td>
+                </tr>
+                SrNo++;
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="10" class="text-center">No bookings found</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-gva9KS56O10C9Gz5ljfWtFF3Z77DZONeArdLh6POlc9p2FrFwPp5rNRYdgKZf58E" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#bookingsTable').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            columnDefs: [
+                { orderable: false, targets: [9] } // Action column is not sortable
+            ]
+        });
+    });
+</script>

@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveler</title>
+    <link rel="shortcut icon" href="/assets/favicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-list {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-link {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            transition: color 0.3s;
+        }
+
+            .navbar-link:hover {
+                color: #007bff;
+            }
+
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+
+            .footer a {
+                color: #ffffff;
+                text-decoration: none;
+            }
+
+                .footer a:hover {
+                    text-decoration: underline;
+                }
+
+        .main-content {
+            padding: 50px 0;
+            text-align: center;
+            min-height: calc(100vh - 300px);
+        }
+
+        .go-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            display: none;
+            cursor: pointer;
+        }
+
+            .go-top:active {
+                transform: scale(0.95);
+            }
+        /* Default header style */
+        .header {
+            background-color: cadetblue; /* Set your header background color */
+            transition: background-color 0.3s ease;
+        }
+
+            /* Ensure header remains unchanged on hover */
+            .header:hover {
+                background-color: cadetblue; /* Same as default to avoid changes */
+            }
+
+        /* Button style */
+        .header-btn-group button {
+            background-color: #007bff; /* Default button color */
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            /* Button hover style */
+            .header-btn-group button:hover {
+                background-color: #0056b3; /* Darker shade on hover */
+            }
+
+            /* Link inside button styling */
+            .header-btn-group button a {
+                color: inherit; /* Ensure link inside button matches button color */
+                text-decoration: none;
+            }
+
+                /* Link hover inside button styling */
+                .header-btn-group button a:hover {
+                    color: inherit; /* Prevent link color change */
+                }
+
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <a href="#" class="logo">
+                    <img src="/assets/logo.png" alt="Traveler logo">
+                </a>
+                <ul class="navbar-list">
+                    <li><a href="@Url.Action("AddTravelBooking","Booking")" class="navbar-link">Add Booking</a></li>
+                    <li><a href="@Url.Action("BookingList","Booking")" class="navbar-link">Booking List</a></li>
+                    <li><a href="@Url.Action("Logout","User")" class="navbar-link" onclick="logout()">Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="main-content">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+
+        <div class="footer-top">
+            <div class="container">
+
+                <div class="footer-brand">
+
+                    <a href="#" class="logo">
+                        <img src="/assets/logo.png" alt="Tourly logo">
+                    </a>
+
+                    <p class="footer-text">
+                        Urna ratione ante harum provident, eleifend, vulputate molestiae proin fringilla, praesentium magna conubia
+                        at
+                        perferendis, pretium, aenean aut ultrices.
+                    </p>
+
+                </div>
+
+                <div class="footer-contact">
+
+                    <h4 class="contact-title">Contact Us</h4>
+
+                    <p class="contact-text">
+                        Feel free to contact and reach us !!
+                    </p>
+
+                    <ul>
+
+                        <li class="contact-item">
+                            <ion-icon name="call-outline"></ion-icon>
+
+                            <a href="tel:+355688888888" class="contact-link">+355 68 888 8888</a>
+                        </li>
+
+                        <li class="contact-item">
+                            <ion-icon name="mail-outline"></ion-icon>
+
+                            <a href="mailto:info.tourly.com" class="contact-link">info.tourly.com</a>
+                        </li>
+
+                        <li class="contact-item">
+                            <ion-icon name="location-outline"></ion-icon>
+
+                            <address>3146 Koontz, California</address>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-form">
+
+                    <p class="form-text">
+                        Subscribe our newsletter for more update & news !!
+                    </p>
+
+                    <form action="" class="form-wrapper">
+                        <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
+
+                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+
+                <p class="copyright">
+                    &copy;<a id="currentYear" href=""></a>. All rights reserved
+                </p>
+
+                <ul class="footer-bottom-list">
+
+                    <li>
+                        <a href="/privacy-policy.html" class="footer-bottom-link">Privacy Policy</a>
+                    </li>
+
+                    <li>
+                        <a href="/terms-conditions.html" class="footer-bottom-link">Term & Condition</a>
+                    </li>
+
+                    <li>
+                        <a href="/faq.html" class="footer-bottom-link">FAQ</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Go to Top Button -->
+    <button class="go-top" onclick="scrollToTop()">
+        <ion-icon name="chevron-up-outline"></ion-icon>
+    </button>
+
+    <script>
+        // Show "Go to Top" button
+        window.addEventListener('scroll', function () {
+            const goTopBtn = document.querySelector('.go-top');
+            if (window.scrollY > 200) {
+                goTopBtn.style.display = 'block';
+            } else {
+                goTopBtn.style.display = 'none';
+            }
+        });
+
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

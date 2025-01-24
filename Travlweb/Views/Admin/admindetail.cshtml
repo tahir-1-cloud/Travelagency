@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "admindetail";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJx3Xg1FzBz4w8j7Hqr0GgmJiv9OHdFy5zHLfF/8bsZL6RrygKIEHtvL+0eP" crossorigin="anonymous">
+<style>
+    .welcome-container {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+        .welcome-container h1 {
+            font-size: 2.5rem;
+            color: #007bff;
+        }
+
+        .welcome-container p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+    .travel-img {
+        width: 100%; /* Ensures the images take up the full width of their columns */
+        height: auto; /* Keeps the aspect ratio intact */
+    }
+
+    .welcome-container h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .welcome-container p {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .btn-book {
+        display: block;
+        margin: 0 auto;
+    }
+    
+
+</style>
+
+
+<div class="container">
+    <div class="welcome-container">
+        <h1>Welcome to Travel Dashboard</h1>
+        <p>You can now book your journey and explore exciting destinations!</p>
+
+        <!-- Travel Images in one row -->
+        <div class="row">
+            <div class="col-md-6">
+                <img src="~/assets/img4.jpg" alt="Travel" class="img-fluid travel-img">
+            </div> <br />
+            <div class="col-md-6">
+                <img src="~/assets/popular-1.jpg" alt="Travel" class="img-fluid travel-img">
+            </div>
+        </div>
+        <br /><br />
+        <!-- Book Journey Button -->
+        <a href="@Url.Action("AddTravelBooking", "Booking")" class="btn btn-primary btn-book">Book Your Journey</a>
+    </div>
+</div>
+
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0Dh0MdW9J0x4kPYw6zD6FjmZG+NJS2QIVD6TZTDej0x6tb5F" crossorigin="anonymous"></script>

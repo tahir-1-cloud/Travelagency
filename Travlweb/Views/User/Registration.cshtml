@@ -1,0 +1,79 @@
+﻿
+@{
+    Layout = null;
+}
+@model Travlweb.Models.UserViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registration</title>
+    <link rel="stylesheet" href="~/css/login.css">
+
+    <style>
+        .register {
+            text-align: center; /* Center-align the button */
+            margin-top: 15px !important; /* Add space above the button */
+        }
+
+            .register .btn {
+                display: inline-block; /* Ensure button behaves properly */
+                text-decoration: none !important; /* Remove underline */
+                padding: 10px 20px; /* Add padding for button look */
+                border: 1px solid transparent; /* Optional border */
+                border-radius: 5px; /* Rounded corners */
+                font-size: 16px; /* Adjust font size */
+                color: white !important; /* Text color */
+                background-color: #6c757d !important; /* Default button color */
+                transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+            }
+
+                .register .btn:hover {
+                    background-color: #5a6268 !important; /* Change color on hover */
+                    color: #ffffff !important; /* Text color on hover */
+                }
+
+    </style>
+</head>
+
+<body>
+    <div class="mainContainer" style="width: 50%;">
+        <div class="rightContainer">
+            <h3>Create an Account</h3>
+           
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @using (Html.BeginForm("Registration", "User", FormMethod.Post, new { id = "registerForm" }))
+            {
+                <div class="input-container">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Enter your email" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="input-container">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter your password", autocomplete = "current-password" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="input-container">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm your password" })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+
+                <input type="submit" class="btn btn-primary mt-3" value="Register" />
+                <br />
+                <strong>Or</strong>
+
+                <div class="register mt-3">
+                    <a href="@Url.Action("Login", "User")" class="btn btn-secondary">Sign In</a>
+                </div>
+            }
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.13/dist/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

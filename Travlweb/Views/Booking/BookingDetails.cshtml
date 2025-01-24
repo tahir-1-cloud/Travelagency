@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "BookingDetails";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+}
+
+@model Travlweb.Models.BookingViewModel
+
+@{
+    ViewData["Title"] = "Booking Details";
+}
+
+<h2>Booking Details</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Number of Persons</th>
+            <th>Leaving From</th>
+            <th>Traveling To</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.FirstName</td>
+            <td>@Model.LastName</td>
+            <td>@Model.Email</td>
+            <td>@Model.PhoneNumber</td>
+            <td>@Model.NumberOfPersons</td>
+            <td>@Model.LeavingFrom</td>
+            <td>@Model.TravelingTo</td>
+            <td>@Model.Gender</td>
+        </tr>
+    </tbody>
+</table>
+

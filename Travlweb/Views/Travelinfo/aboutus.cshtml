@@ -1,0 +1,547 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveler</title>
+    <link rel="shortcut icon" href="/assets/favicon.png">
+    <link rel="stylesheet" href="~/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/script/faq.js"></script>
+</head>
+<body id="top">
+    <header class="header" data-header>
+
+        <div class="overlay" data-overlay></div>
+
+        <div class="header-top">
+            <div class="container">
+
+                <a href="tel:+355688888888" class="helpline-box">
+
+                    <div class="icon-box">
+                        <ion-icon name="call-outline"></ion-icon>
+                    </div>
+
+                    <div class="wrapper">
+                        <p class="helpline-title">For Further Inquires :</p>
+
+                        <p class="helpline-number">+355 68 888 8888</p>
+                    </div>
+
+                </a>
+
+                <a href="#" class="logo">
+                    <img src="/assets/logo.png" alt="Tourly logo">
+                </a>
+
+                <div class="header-btn-group">
+
+                    <button class="search-btn" aria-label="Search">
+                        <ion-icon name="search"></ion-icon>
+                    </button>
+
+                    <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="container">
+
+                <ul class="social-list">
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-youtube"></ion-icon>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <nav class="navbar" data-navbar>
+
+                    <div class="navbar-top">
+
+                        <a href="#" class="logo">
+                            <img src="/assets/logo.png" alt="Tourly logo">
+                        </a>
+
+                        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+                            <ion-icon name="close-outline"></ion-icon>
+                        </button>
+
+                    </div>
+
+                    <ul class="navbar-list">
+
+                        <li id="homeLink">
+                            <a href="@Url.Action("Index","Home")" class="navbar-link" data-nav-link>home</a>
+                        </li>
+
+                        
+
+                        <li id="loginLink">
+                            <a href="@Url.Action("Login","User")" class="navbar-link" data-nav-link>log in</a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <button class="btn btn-primary"><a href="@Url.Action("Login","User")">Book Now</a></button>
+
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <article>
+
+            <section class="hero" id="home" style=" min-height: 300px;">
+                <div class="container">
+
+                    <h2 class="h2 hero-title" style="color: white;">ABOUT US</h2>
+
+                </div>
+            </section>
+            <section class="min-h-screen py-8 px-8 lg:py-28">
+                <div class="container mx-auto">
+                    <div class="mb-16 text-center lg:mb-28">
+                        <h6 class="block antialiased tracking-normal font-sans font-semibold leading-relaxed text-blue-gray-900 text-lg">
+                            Meet the Team
+                        </h6>
+                        <h1 class="block antialiased tracking-normal font-sans font-semibold leading-tight text-blue-gray-900 my-2 !text-2xl lg:!text-4xl">
+                            Behind the Success: Our Dedicated Team
+                        </h1>
+                        <p class="block antialiased font-sans text-xl font-normal leading-relaxed text-inherit mx-auto w-full !text-gray-500 max-w-4xl">
+                            From visionary leadership to creative talent, and technical wizards,
+                            each team member plays a pivotal role in delivering the exceptional
+                            service and innovative solutions.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+                        <div class="relative flex flex-col bg-clip-border text-gray-700 rounded-lg bg-[#FAFAFA]">
+                            <div class="p-6 text-center">
+                                <img src="https://www.material-tailwind.com/img/avatar1.jpg"
+                                     alt="Ryan Samuel"
+                                     class="inline-block relative object-cover !rounded-full w-[110px] h-[110px] mx-auto mb-6 object-top" />
+                                <h5 class="block antialiased tracking-normal font-sans leading-snug text-blue-gray-900 !font-medium text-lg">
+                                    Ryan Samuel
+                                </h5>
+                                <p class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Co-Founder
+                                </p>
+                                <div class="flex items-center justify-center gap-1.5">
+                                    <button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                            type="button"
+                                            data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-twitter text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-linkedin text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-dribbble text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex flex-col bg-clip-border text-gray-700 rounded-lg bg-[#FAFAFA]">
+                            <div class="p-6 text-center">
+                                <img src="https://www.material-tailwind.com/img/avatar2.jpg"
+                                     alt="Ryan Samuel"
+                                     class="inline-block relative object-cover !rounded-full w-[110px] h-[110px] mx-auto mb-6 object-top" />
+                                <h5 class="block antialiased tracking-normal font-sans leading-snug text-blue-gray-900 !font-medium text-lg">
+                                    Ryan Samuel
+                                </h5>
+                                <p class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Co-Founder
+                                </p>
+                                <div class="flex items-center justify-center gap-1.5">
+                                    <button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                            type="button"
+                                            data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-twitter text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-linkedin text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-dribbble text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex flex-col bg-clip-border text-gray-700 rounded-lg bg-[#FAFAFA]">
+                            <div class="p-6 text-center">
+                                <img src="https://www.material-tailwind.com/img/avatar5.jpg"
+                                     alt="Nora Hazel"
+                                     class="inline-block relative object-cover !rounded-full w-[110px] h-[110px] mx-auto mb-6 object-top" />
+                                <h5 class="block antialiased tracking-normal font-sans leading-snug text-blue-gray-900 !font-medium text-lg">
+                                    Nora Hazel
+                                </h5>
+                                <p class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    UI/UX Designer
+                                </p>
+                                <div class="flex items-center justify-center gap-1.5">
+                                    <button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                            type="button"
+                                            data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-twitter text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-linkedin text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-dribbble text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex flex-col bg-clip-border text-gray-700 rounded-lg bg-[#FAFAFA]">
+                            <div class="p-6 text-center">
+                                <img src="https://www.material-tailwind.com/img/avatar4.jpg"
+                                     alt="Otto Gonzalez"
+                                     class="inline-block relative object-cover !rounded-full w-[110px] h-[110px] mx-auto mb-6 object-top" />
+                                <h5 class="block antialiased tracking-normal font-sans leading-snug text-blue-gray-900 !font-medium text-lg">
+                                    Otto Gonzalez
+                                </h5>
+                                <p class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Marketing Specialist
+                                </p>
+                                <div class="flex items-center justify-center gap-1.5">
+                                    <button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                            type="button"
+                                            data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-twitter text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-linkedin text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-dribbble text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex flex-col bg-clip-border text-gray-700 rounded-lg bg-[#FAFAFA]">
+                            <div class="p-6 text-center">
+                                <img src="https://www.material-tailwind.com/img/avatar6.jpg"
+                                     alt="Emma Roberts"
+                                     class="inline-block relative object-cover !rounded-full w-[110px] h-[110px] mx-auto mb-6 object-top" />
+                                <h5 class="block antialiased tracking-normal font-sans leading-snug text-blue-gray-900 !font-medium text-lg">
+                                    Emma Roberts
+                                </h5>
+                                <p class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    UI Designer
+                                </p>
+                                <div class="flex items-center justify-center gap-1.5">
+                                    <button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                            type="button"
+                                            data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-twitter text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-linkedin text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-dribbble text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex flex-col bg-clip-border text-gray-700 rounded-lg bg-[#FAFAFA]">
+                            <div class="p-6 text-center">
+                                <img src="https://www.material-tailwind.com/img/avatar3.jpg"
+                                     alt="William Pearce"
+                                     class="inline-block relative object-cover !rounded-full w-[110px] h-[110px] mx-auto mb-6 object-top" />
+                                <h5 class="block antialiased tracking-normal font-sans leading-snug text-blue-gray-900 !font-medium text-lg">
+                                    William Pearce
+                                </h5>
+                                <p class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Marketing Specialist
+                                </p>
+                                <div class="flex items-center justify-center gap-1.5">
+                                    <button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                            type="button"
+                                            data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-twitter text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-linkedin text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-dribbble text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex flex-col bg-clip-border text-gray-700 rounded-lg bg-[#FAFAFA]">
+                            <div class="p-6 text-center">
+                                <img src="https://www.material-tailwind.com/image/avatar7.svg"
+                                     alt="Bruce Mars"
+                                     class="inline-block relative object-cover !rounded-full w-[110px] h-[110px] mx-auto mb-6 object-top" />
+                                <h5 class="block antialiased tracking-normal font-sans leading-snug text-blue-gray-900 !font-medium text-lg">
+                                    Bruce Mars
+                                </h5>
+                                <p class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    UI/UX Designer
+                                </p>
+                                <div class="flex items-center justify-center gap-1.5">
+                                    <button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                            type="button"
+                                            data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-twitter text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-linkedin text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-dribbble text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative flex flex-col bg-clip-border text-gray-700 rounded-lg bg-[#FAFAFA]">
+                            <div class="p-6 text-center">
+                                <img src="https://www.material-tailwind.com/image/avatar8.svg"
+                                     alt="Annie Sprrat"
+                                     class="inline-block relative object-cover !rounded-full w-[110px] h-[110px] mx-auto mb-6 object-top" />
+                                <h5 class="block antialiased tracking-normal font-sans leading-snug text-blue-gray-900 !font-medium text-lg">
+                                    Annie Sprrat
+                                </h5>
+                                <p class="block antialiased font-sans leading-relaxed mb-2 !text-base !font-semibold text-gray-600">
+                                    Marketing Specialist
+                                </p>
+                                <div class="flex items-center justify-center gap-1.5">
+                                    <button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                            type="button"
+                                            data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-twitter text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-linkedin text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button><button class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                                     type="button"
+                                                     data-ripple-dark="true">
+                                        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <i class="fa-brands fa-dribbble text-lg"
+                                               aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer class="footer">
+
+        <div class="footer-top">
+            <div class="container">
+
+                <div class="footer-brand">
+
+                    <a href="#" class="logo">
+                        <img src="/assets/logo.png" alt="Tourly logo">
+                    </a>
+
+                    <p class="footer-text">
+                        Urna ratione ante harum provident, eleifend, vulputate molestiae proin fringilla, praesentium magna conubia
+                        at
+                        perferendis, pretium, aenean aut ultrices.
+                    </p>
+
+                </div>
+
+                <div class="footer-contact">
+
+                    <h4 class="contact-title">Contact Us</h4>
+
+                    <p class="contact-text">
+                        Feel free to contact and reach us !!
+                    </p>
+
+                    <ul>
+
+                        <li class="contact-item">
+                            <ion-icon name="call-outline"></ion-icon>
+
+                            <a href="tel:+355 68 888 8888" class="contact-link">+355 68 888 8888</a>
+                        </li>
+
+                        <li class="contact-item">
+                            <ion-icon name="mail-outline"></ion-icon>
+
+                            <a href="mailto:info@traveler.com" class="contact-link">info@traveler.com</a>
+                        </li>
+
+                        <li class="contact-item">
+                            <ion-icon name="location-outline"></ion-icon>
+
+                            <address>Tirana Albania</address>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-form">
+
+                    <p class="form-text">
+                        Subscribe our newsletter for more update & news !!
+                    </p>
+
+                    <form action="" class="form-wrapper">
+                        <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
+
+                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+
+                <p class="copyright">
+                    &copy;<a id="currentYear" href="">codewithsadee</a>. All rights reserved
+                </p>
+
+                <ul class="footer-bottom-list">
+
+                    <li>
+                        <a href="/privacy-policy.html" class="footer-bottom-link">Privacy Policy</a>
+                    </li>
+
+                    <li>
+                        <a href="/terms-conditions.html" class="footer-bottom-link">Term & Condition</a>
+                    </li>
+
+                    <li>
+                        <a href="/faq.html" class="footer-bottom-link">FAQ</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+</html>

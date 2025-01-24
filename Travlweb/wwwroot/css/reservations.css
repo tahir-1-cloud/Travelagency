@@ -1,0 +1,125 @@
+* {
+    font-family: Open Sans;
+  }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(https://assets.bwbx.io/images/users/iqjWHBFdfxIU/inz2aw4qyHXU/v0/1200x800.jpg);
+    background-size: cover;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    
+}
+.banner{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.logo{
+    margin: auto 3rem;
+    cursor: pointer;
+}
+
+
+.nav-links{
+    margin: auto 0;
+}
+
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin: auto 1.2rem;
+    position: relative;
+}
+
+nav ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: white;
+}
+
+
+ul li a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    background-color: #3498db;
+    transition: 0.6s ease-out;
+    
+}
+
+ul li a:hover::after{
+    width: 100%;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #3498db;
+    margin: 0;
+    color: #fff;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+span.edit-btn, span.remove-btn,span.save-btn {
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 5px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+span.remove-btn {
+    background-color: #e74c3c;
+}
+
+span.edit-btn:hover, span.remove-btn:hover {
+    background-color: #2980b9;
+}
+.edit-input {
+    width: 50px; 
+    padding: 6px;
+    box-sizing: border-box;
+}
+span.save-btn {
+    background-color: #2ecc71; 
+    color: #fff;
+}
+
+span.save-btn:hover {
+    background-color: #27ae60; 
+}
